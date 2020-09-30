@@ -1,4 +1,4 @@
-FROM buildpack-deps:stretch AS my_build_1
+FROM buildpack-deps:stretch 
 
 # Install NodeJS dependencies
 RUN groupadd --gid 1000 node \
@@ -45,8 +45,6 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   # smoke tests
   && node --version \
   && npm --version
-
-FROM my_build_1 AS my_build_2
 
 ENV YARN_VERSION 1.22.4
 
