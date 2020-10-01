@@ -1,4 +1,4 @@
-FROM buildpack-deps:stretch 
+FROM buildpack-deps:stretch AS build_1
 
 # Install NodeJS dependencies
 RUN groupadd --gid 1000 node \
